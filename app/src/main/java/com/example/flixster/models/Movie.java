@@ -1,0 +1,41 @@
+package com.example.flixster.models;
+
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Movie {
+  String posterPath;
+  String title;
+  String overview;
+
+  public String getPosterPath() {
+    return posterPath;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getOverview() {
+    return overview;
+  }
+
+  public Movie(JSONObject jsonObject) throws JSONException {
+    posterPath = jsonObject.getString("poster_path");
+    title = jsonObject.getString("title");
+    overview = jsonObject.getString("overview");
+  }
+
+  public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException{
+    List<Movie> movies = new ArrayList<>();
+    for(int index = 0; index< movieJsonArray.length(); index++){
+      movies.add(new Movie(movieJsonArray.getJSONObject(index)));
+    }
+    return movies;
+  }
+}
