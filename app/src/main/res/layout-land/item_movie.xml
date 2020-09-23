@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/ivPoster"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+    />
+
+    <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivPoster"
+            android:layout_marginStart="5dp"
+            android:textSize="28sp" tools:text="BATMAN"
+            android:layout_marginTop="5dp"/>
+
+    <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivPoster"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginStart="5dp"
+            tools:text="When  to defend the country from Huns, Hua Mulan, the eldes on her feet. race her true potential"
+            android:layout_marginTop="5dp"
+    />
+
+
+</RelativeLayout>
