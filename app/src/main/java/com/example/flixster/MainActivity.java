@@ -9,6 +9,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.adapter.MovieAdapter;
 import com.example.flixster.models.Movie;
+import com.example.flixster.models.PopularMovie;
 import okhttp3.Headers;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
   public static final String NOW_PLAYING_URL = "https://api.themoviedb" +
                                                ".org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
   public static final String TAG = "MainActivity";
-  List<Movie> movies;
-  public static final String IMG_URL = "https://api.themoviedb" +
-                                       ".org/3/configuration?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+  static  List<Object> movies;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +50,24 @@ public class MainActivity extends AppCompatActivity {
         try {
           JSONArray results = jsonObject.getJSONArray("results");
           Log.i(TAG, "Results: " + results.toString());
-          movies.addAll( Movie.fromJsonArray(results));
+          fromJsonArray(results);
           movieAdapter.notifyDataSetChanged();
           Log.i(TAG, "Movies:" + movies.size());
+
         } catch (JSONException e) {
 
           Log.e(TAG, "exception caught");
         }
       }
 
-
       @Override
       public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
         Log.d(TAG, "onFailure : Failed");
       }
     });
+
+
+
 
     // configuring image URL
 //    client.get(IMG_URL, new JsonHttpResponseHandler(){
@@ -86,5 +89,18 @@ public class MainActivity extends AppCompatActivity {
 //      }
 //    });
 
+  }
+  // getting jsonArray into the list.
+  public static List<Object> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
+
+     for(int index = 0; index < movieJsonArray.length(); index++){
+       JSONObject obj = movieJsonArray.getJSONObject(index);
+       if (obj.getDouble("vote_average") <= 7.5) {
+         movies.add(new Movie(obj));
+       } else {
+         movies.add(new PopularMovie(obj));
+       }
+     }
+     return movies;
   }
 }

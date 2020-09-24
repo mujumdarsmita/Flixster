@@ -7,9 +7,9 @@
             android:id="@+id/ivPoster"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="0dp"
-
+           android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
 
     />
 
@@ -18,9 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/ivPoster"
-            android:layout_marginStart="5dp"
             android:textSize="28sp" tools:text="BATMAN"
-            android:layout_marginTop="5dp"/>
+            />
 
     <TextView
             android:id="@+id/tvOverview"
@@ -31,6 +30,8 @@
             android:layout_marginStart="5dp"
             tools:text="When  to defend the country from Huns, Hua Mulan, the eldes on her feet. race her true potential"
             android:layout_marginTop="5dp"
+            android:maxLines="6"
+            android:ellipsize="end"
     />
 
 
