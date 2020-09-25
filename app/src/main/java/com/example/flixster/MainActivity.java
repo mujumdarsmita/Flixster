@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
      for(int index = 0; index < movieJsonArray.length(); index++){
        JSONObject obj = movieJsonArray.getJSONObject(index);
-       if (obj.getDouble("vote_average") <= 7.5) {
+       if (obj.getDouble("vote_average") <= 7) {
          movies.add(new Movie(obj));
        } else {
          movies.add(new PopularMovie(obj));

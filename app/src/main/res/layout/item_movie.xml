@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+>
 
     <ImageView
             android:id="@+id/ivPoster"
@@ -11,6 +13,12 @@
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
 
+
+    />
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray"
+          android:layout_alignParentBottom="true"
     />
 
     <TextView
@@ -19,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/ivPoster"
             android:textSize="28sp" tools:text="BATMAN"
-            />
+            android:padding="10dp"
+            android:textStyle="bold"/>
 
     <TextView
             android:id="@+id/tvOverview"
@@ -27,11 +36,10 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/ivPoster"
             android:layout_below="@+id/tvTitle"
-            android:layout_marginStart="5dp"
             tools:text="When  to defend the country from Huns, Hua Mulan, the eldes on her feet. race her true potential"
-            android:layout_marginTop="5dp"
             android:maxLines="6"
             android:ellipsize="end"
+            android:padding="10dp"
     />
 
 

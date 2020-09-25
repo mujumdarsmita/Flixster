@@ -115,7 +115,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
       else{
         imageUrl = movie.getPosterPath();
       }
-      Glide.with(context).load(imageUrl).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder_96)).into(ivPoster);
+      Glide.with(context).load(imageUrl).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivPoster);
     }
   }// ViewHolder ends
 
@@ -132,7 +132,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     public void bindPopularMovie(PopularMovie movie ){
       String url = movie.getBackdropPath();
-      Glide.with(context).load(url).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder_96)).into(ivBackdrop);
+      Glide.with(context).load(url).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivBackdrop);
 
     }
   }// ViewHolder2 ends
