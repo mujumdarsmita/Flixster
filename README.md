@@ -17,7 +17,7 @@ The following **stretch** stories are implemented:
 
 * [X] User can **view the poster image, title, and movie overview in the portrait mode.**
 * [X] **In landscape mode, the rotated alternate layout should use the backdrop image instead and show the title and movie overview to the right of it.**
-* [X] User can **view a nice default placeholder graphic for each image during loading.**
+* [X] User can **view a default placeholder graphic for each image during loading.**
 * [X] **Improve the user interface through styling and coloring**
 * [X] **For popular movies, the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.**
 
