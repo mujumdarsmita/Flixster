@@ -91,7 +91,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
   }
 
 
-  //ViewHolder1
+  //ViewHolder1 for movies
   public class ViewHolder1 extends RecyclerView.ViewHolder {
 
     TextView tvTitle;
@@ -120,7 +120,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
   }// ViewHolder ends
 
 
-  // ViewHolder2
+  // ViewHolder2 for Popular movies
   public class ViewHolder2 extends RecyclerView.ViewHolder{
 
     ImageView ivBackdrop;
@@ -135,5 +135,5 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
       Glide.with(context).load(url).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivBackdrop);
 
     }
-  }// ViewHolder2 ends
+  }
 }

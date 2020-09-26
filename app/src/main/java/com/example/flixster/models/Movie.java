@@ -45,17 +45,5 @@ public class Movie {
     voteAverage = jsonObject.getDouble("vote_average");
   }
 
-//  public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException{
-//    List<Movie> movies = new ArrayList<>();
-//    for(int index = 0; index< movieJsonArray.length(); index++){
-//      JSONObject obj = movieJsonArray.getJSONObject(index);
-//      if (obj.getDouble("vote_average") <= 5.0) {
-//        movies.add(new Movie(obj));
-//      } else {
-//
-//      }
-//
-//    }
-//    return movies;
-//  }
+
 }

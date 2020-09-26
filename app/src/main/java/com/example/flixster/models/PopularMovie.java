@@ -42,11 +42,5 @@ public class PopularMovie {
     voteAverage = jsonObject.getDouble("vote_average");
   }
 
-  public static List<PopularMovie> fromJsonArray(JSONArray movieJsonArray) throws JSONException{
-    List<PopularMovie> popularMovie = new ArrayList<>();
-    for(int index = 0; index< movieJsonArray.length(); index++){
-      popularMovie.add(new PopularMovie(movieJsonArray.getJSONObject(index)));
-    }
-    return popularMovie;
-  }
+
 }

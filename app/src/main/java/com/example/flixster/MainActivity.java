@@ -67,28 +67,6 @@ public class MainActivity extends AppCompatActivity {
     });
 
 
-
-
-    // configuring image URL
-//    client.get(IMG_URL, new JsonHttpResponseHandler(){
-//
-//      @Override
-//      public void onSuccess(int statusCode, Headers headers, JSON json) {
-//        JSONObject obj = json.jsonObject;
-//
-//        try {
-//          Log.i(TAG, "Image: " + obj.getString("images"));
-//        } catch (JSONException e) {
-//          e.printStackTrace();
-//        }
-//      }
-//
-//      @Override
-//      public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-//        Log.d(TAG, "onFailure : Failed");
-//      }
-//    });
-
   }
   // getting jsonArray into the list.
   public static List<Object> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
