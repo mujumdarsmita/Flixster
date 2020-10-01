@@ -1,20 +1,25 @@
 package com.example.flixster.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.flixster.DetailActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 import com.example.flixster.models.PopularMovie;
+import org.parceler.Parcels;
 
 
 import java.util.List;
@@ -93,19 +98,21 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
   //ViewHolder1 for movies
   public class ViewHolder1 extends RecyclerView.ViewHolder {
-
+    RelativeLayout movieContainer;
     TextView tvTitle;
     TextView tvOverview;
     ImageView ivPoster;
+
 
     public ViewHolder1(@NonNull View itemView) {
       super(itemView);
       tvTitle = itemView.findViewById(R.id.tvTitle);
       tvOverview = itemView.findViewById(R.id.tvOverview);
       ivPoster = itemView.findViewById(R.id.ivPoster);
+      movieContainer = itemView.findViewById(R.id.movieContainer);
     }
 
-    public void bindMovie(Movie movie ) {
+    public void bindMovie(final Movie movie ) {
       tvTitle.setText(movie.getTitle());
       tvOverview.setText(movie.getOverview());
       String imageUrl;
@@ -116,6 +123,20 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         imageUrl = movie.getPosterPath();
       }
       Glide.with(context).load(imageUrl).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivPoster);
+      movieContainer.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+          //Toast.makeText(context, movie.getTitle(), Toast.LENGTH_SHORT).show();
+          int position = getAdapterPosition();
+          if(position != RecyclerView.NO_POSITION){
+            Log.d("DetailActivity", "OnClick" + position);
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+            context.startActivity(intent);
+          }
+
+        }
+      });
     }
   }// ViewHolder ends
 
@@ -133,7 +154,6 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public void bindPopularMovie(PopularMovie movie ){
       String url = movie.getBackdropPath();
       Glide.with(context).load(url).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivBackdrop);
-
     }
   }
 }
