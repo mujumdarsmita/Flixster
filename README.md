@@ -54,7 +54,7 @@ The following **stretch** stories are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='Walkthrough.gif' title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width=250 />
+<img src='Walkthrough.gif' title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width=450 />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
