@@ -20,7 +20,7 @@
 
 ### App Walkthough GIF
 
-<img src="Walkthrough1.1.gif" title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width=250/><br>
+<img src="Walkthrough1.1.gif" title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width=350/><br>
 
 
 ## Open-source libraries used
