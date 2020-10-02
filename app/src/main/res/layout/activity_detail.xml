@@ -27,7 +27,19 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              tools:text="Ek villian"
-             android:textSize="30sp"/>
+             android:textSize="30sp"
+             android:transitionName="movieTitleTransition"
+             android:layout_margin="5dp"
+    />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDate"
+            android:textSize="14sp"
+            tools:text="2020-10-21"
+            android:layout_margin="5dp"
+    />
 
     <RatingBar
             android:layout_width="wrap_content"
@@ -35,13 +47,16 @@
             android:id="@+id/ratingBar"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:numStars="5"
-            android:rating="8" android:stepSize="0.5"/>
+            android:rating="8" android:stepSize="0.5"
+            android:layout_margin="5dp"
+            android:layout_marginTop="0dp"
+    />
 
     <TextView
             android:id="@+id/tvOverview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_margin="5dp"
             tools:text="Jana Gana Mana Adhinayaka jaya hai, Bharata Bhagyavidhata. Punjaba sindhu Gujarata Maratha , dravida Utkala Banga"/>
 
 </LinearLayout>

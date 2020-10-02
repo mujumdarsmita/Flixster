@@ -26,6 +26,7 @@ public class DetailActivity extends YouTubeBaseActivity {
 
   TextView tvTitle;
   TextView tvOverview;
+  TextView tvDate;
   RatingBar rbVoterAverage;
   Movie movie;
   YouTubePlayerView youTubePlayerView;
@@ -40,6 +41,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     tvOverview = findViewById(R.id.tvOverview);
     rbVoterAverage = findViewById(R.id.ratingBar);
     youTubePlayerView = findViewById(R.id.player);
+    tvDate = findViewById(R.id.tvDate);
 
     // Unwraping the bundle from the intent
     movie = Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
@@ -101,6 +103,7 @@ public class DetailActivity extends YouTubeBaseActivity {
 
     tvTitle.setText(movie.getTitle());
     tvOverview.setText(movie.getOverview());
+    tvDate.setText(movie.getDate());
     Float voteAverage = movie.getVoteAverage().floatValue();
     rbVoterAverage.setRating(voteAverage = voteAverage > 0 ? voteAverage / 2.0f : voteAverage);
 

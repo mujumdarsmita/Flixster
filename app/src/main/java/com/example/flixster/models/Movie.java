@@ -17,6 +17,7 @@ public class Movie {
   String overview;
   Double voteAverage;
   int movieID;
+  String date;
 
   // for parceler library
   public Movie(){
@@ -47,6 +48,10 @@ public class Movie {
     return movieID;
   }
 
+  public String getDate(){
+    return date;
+  }
+
 
   public Movie(JSONObject jsonObject) throws JSONException {
     posterPath = jsonObject.getString("poster_path");
@@ -55,6 +60,7 @@ public class Movie {
     overview = jsonObject.getString("overview");
     voteAverage = jsonObject.getDouble("vote_average");
     movieID = jsonObject.getInt("id");
+    date = jsonObject.getString("release_date");
   }
 
 

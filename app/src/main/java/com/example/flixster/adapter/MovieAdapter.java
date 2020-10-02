@@ -1,5 +1,6 @@
 package com.example.flixster.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -12,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -20,6 +22,7 @@ import com.example.flixster.MovieTrailerActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 import com.example.flixster.models.PopularMovie;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import org.parceler.Parcels;
 
 
@@ -114,6 +117,8 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     public void bindMovie(final Movie movie ) {
+      int radius = 40;
+      int margin = 10;
       tvTitle.setText(movie.getTitle());
       tvOverview.setText(movie.getOverview());
       String imageUrl;
@@ -123,7 +128,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
       else{
         imageUrl = movie.getPosterPath();
       }
-      Glide.with(context).load(imageUrl).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivPoster);
+      Glide.with(context).load(imageUrl).transform(new RoundedCornersTransformation(radius, margin)).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivPoster);
       movieContainer.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -133,7 +138,8 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             Log.d("DetailActivity", "OnClick" + position);
             Intent intent = new Intent(context, DetailActivity.class);
             intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
-            context.startActivity(intent);
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, tvTitle, "movieTitleTransition");
+            context.startActivity(intent, options.toBundle());
           }
 
         }
@@ -154,8 +160,10 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     public void bindPopularMovie(final PopularMovie movie ){
+      int radius = 40;
+      int margin = 10;
       String url = movie.getBackdropPath();
-      Glide.with(context).load(url).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivBackdrop);
+      Glide.with(context).load(url).transform(new RoundedCornersTransformation(radius, margin)).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivBackdrop);
       popularMovieContainer.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
