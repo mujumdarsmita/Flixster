@@ -4,9 +4,11 @@ import android.util.Log;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.databinding.DataBindingUtil;
 import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixster.databinding.ActivityMovieTrailerBinding;
 import com.example.flixster.models.PopularMovie;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -27,12 +29,14 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                                          ".org/3/movie/%d/videos?api_key" +
                                          "=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
+  private ActivityMovieTrailerBinding binding;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_movie_trailer);
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_trailer);
 
-    youtubePlayerView = findViewById(R.id.player);
+    youtubePlayerView = binding.player;
 
     //get Intent
     movie = Parcels.unwrap(getIntent().getParcelableExtra(PopularMovie.class.getSimpleName()));

@@ -3,11 +3,13 @@ package com.example.flixster;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.adapter.MovieAdapter;
+import com.example.flixster.databinding.ActivityMainBinding;
 import com.example.flixster.models.Movie;
 import com.example.flixster.models.PopularMovie;
 import okhttp3.Headers;
@@ -25,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
   public static final String TAG = "MainActivity";
   static  List<Object> movies;
 
+  //store the binding
+  private ActivityMainBinding binding;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    RecyclerView rvMovies = findViewById(R.id.rvMovies);
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    RecyclerView rvMovies = binding.rvMovies;
     movies = new ArrayList<>();
     //Creating Adapter
     final MovieAdapter movieAdapter = new MovieAdapter(this, movies);

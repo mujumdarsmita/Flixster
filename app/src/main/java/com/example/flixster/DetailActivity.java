@@ -5,8 +5,11 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.databinding.DataBindingUtil;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixster.databinding.ActivityDetailBinding;
+import com.example.flixster.databinding.ActivityMainBinding;
 import com.example.flixster.models.Movie;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -24,6 +27,8 @@ public class DetailActivity extends YouTubeBaseActivity {
                                          ".org/3/movie/%d/videos?api_key" +
                                          "=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
+  private ActivityDetailBinding binding;
+
   TextView tvTitle;
   TextView tvOverview;
   TextView tvDate;
@@ -35,13 +40,13 @@ public class DetailActivity extends YouTubeBaseActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_detail);
+    binding = DataBindingUtil.setContentView(this,R.layout.activity_detail);
 
-    tvTitle = findViewById(R.id.tvTitle);
-    tvOverview = findViewById(R.id.tvOverview);
-    rbVoterAverage = findViewById(R.id.ratingBar);
-    youTubePlayerView = findViewById(R.id.player);
-    tvDate = findViewById(R.id.tvDate);
+    tvTitle = binding.tvTitle;
+    tvOverview = binding.tvOverview;
+    rbVoterAverage = binding.ratingBar;
+    youTubePlayerView = binding.player;
+    tvDate = binding.tvDate;
 
     // Unwraping the bundle from the intent
     movie = Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));

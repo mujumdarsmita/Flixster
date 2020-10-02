@@ -117,7 +117,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     public void bindMovie(final Movie movie ) {
-      int radius = 40;
+      int radius = 20;
       int margin = 10;
       tvTitle.setText(movie.getTitle());
       tvOverview.setText(movie.getOverview());
@@ -138,7 +138,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             Log.d("DetailActivity", "OnClick" + position);
             Intent intent = new Intent(context, DetailActivity.class);
             intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, tvTitle, "movieTitleTransition");
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, (View)tvTitle, "movieTitleTransition");
             context.startActivity(intent, options.toBundle());
           }
 
