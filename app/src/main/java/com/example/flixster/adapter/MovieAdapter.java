@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.flixster.DetailActivity;
+import com.example.flixster.MovieTrailerActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 import com.example.flixster.models.PopularMovie;
@@ -143,17 +144,33 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
   // ViewHolder2 for Popular movies
   public class ViewHolder2 extends RecyclerView.ViewHolder{
-
+    RelativeLayout popularMovieContainer;
     ImageView ivBackdrop;
 
     public ViewHolder2(@NonNull View itemView) {
       super(itemView);
       ivBackdrop = itemView.findViewById(R.id.ivBackdrop);
+      popularMovieContainer = itemView.findViewById(R.id.popularMovieContainer);
     }
 
-    public void bindPopularMovie(PopularMovie movie ){
+    public void bindPopularMovie(final PopularMovie movie ){
       String url = movie.getBackdropPath();
       Glide.with(context).load(url).apply(new RequestOptions().placeholder(R.drawable.ic_placeholder)).into(ivBackdrop);
+      popularMovieContainer.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+          //Toast.makeText(context, movie.getTitle() , Toast.LENGTH_SHORT).show();
+          int position = getAdapterPosition();
+          if(position!= RecyclerView.NO_POSITION){
+            Log.d("MovieTrailerActivity", "OnClick " + position);
+            // Intent for MovieTrailerActivity
+            Intent intent = new Intent(context, MovieTrailerActivity.class);
+            intent.putExtra(PopularMovie.class.getSimpleName(), Parcels.wrap(movie));
+            context.startActivity(intent);
+
+          }
+        }
+      });
     }
   }
 }

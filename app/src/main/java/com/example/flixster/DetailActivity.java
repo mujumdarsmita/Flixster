@@ -64,7 +64,7 @@ public class DetailActivity extends YouTubeBaseActivity {
           initializeYoutube(youtubeVideokey);
         }
         catch (JSONException e){
-          Log.d("DetailActivity", "onSuccess: Failed to parse Json");
+          Log.d("DetailActivity", "onFailure: Failed to parse Json");
         }
 
       }
@@ -92,7 +92,7 @@ public class DetailActivity extends YouTubeBaseActivity {
 
       @Override
       public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-        Log.d("DetailActivity", "onSuccess: Failed");
+        Log.d("DetailActivity", "onFailure: Failed");
       }
     });
 

@@ -18,6 +18,7 @@ public class Movie {
   Double voteAverage;
   int movieID;
 
+  // for parceler library
   public Movie(){
 
   }

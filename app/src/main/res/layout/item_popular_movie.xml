@@ -4,18 +4,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/popularMovieContainer">
 
-    <ImageView
-            android:id="@+id/ivBackdrop"
-            android:layout_width="500dp"
-            android:layout_height="200dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:scaleType="fitXY"
-            android:adjustViewBounds="true"
-    />
+    
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/ivBackdrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_gravity="top"
+                android:alpha="0.6"
+
+        />
+
+        <ImageView
+                android:id="@+id/overlayIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/youtube_social_icon_white"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="85dp"
+
+        />
+
+    </FrameLayout>
+
 
     <View android:layout_width="match_parent"
           android:layout_height="1dp"

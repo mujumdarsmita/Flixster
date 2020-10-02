@@ -3,20 +3,29 @@ package com.example.flixster.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class PopularMovie {
-  String posterPath;
+//  String posterPath;
   String backdropPath;
   String title;
   String overview;
   Double voteAverage;
+  int movieID;
 
-  public String getPosterPath() {
-    return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
+  // for Parceler library
+  public PopularMovie(){
+
   }
+
+
+//  public String getPosterPath() {
+//    return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
+//  }
 
   public String getBackdropPath(){
     return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
@@ -34,12 +43,17 @@ public class PopularMovie {
     return voteAverage;
   }
 
+  public int getMovieID(){
+    return movieID;
+  }
+
   public PopularMovie(JSONObject jsonObject) throws JSONException {
-    posterPath = jsonObject.getString("poster_path");
+//    posterPath = jsonObject.getString("poster_path");
     backdropPath = jsonObject.getString("backdrop_path");
     title = jsonObject.getString("title");
     overview = jsonObject.getString("overview");
     voteAverage = jsonObject.getDouble("vote_average");
+    movieID = jsonObject.getInt("id");
   }
 
 

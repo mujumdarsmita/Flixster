@@ -14,10 +14,11 @@
                  <!--android:layout_height="wrap_content">-->
         <!--<ImageView android:layout_width="match_parent" android:layout_height="wrap_content"/>-->
 
-        <com.google.android.youtube.player.YouTubePlayerView
-                android:id="@+id/player"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+    <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+    />
 
     <!--</FrameLayout>-->
 
@@ -41,7 +42,9 @@
             android:id="@+id/tvOverview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            tools:text="Jana Gana Mana Adhinayaka jaya hai, Bharata Bhagyavidhata. Punjaba sindhu Gujarata Maratha , dravida Utkala Banga"/>
+            tools:text="Jana Gana Mana Adhinayaka jaya hai, Bharata Bhagyavidhata. Punjaba sindhu Gujarata Maratha , dravida Utkala Banga"
+            android:maxLines="1"
+            android:ellipsize="end"
+    />
 
 </LinearLayout>
