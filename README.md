@@ -20,7 +20,7 @@
 
 ### App Walkthough GIF
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="Walkthrough1.1.gif" title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width="250" height="250"/><br>
 
 ### Notes
 
@@ -57,7 +57,7 @@ The following **stretch** stories are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='Walkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='Walkthrough.gif' title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width="250" height="250"/>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
