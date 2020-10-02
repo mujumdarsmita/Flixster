@@ -20,11 +20,8 @@
 
 ### App Walkthough GIF
 
-<img src="Walkthrough1.1.gif" title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width="250" height="250"/><br>
+<img src="Walkthrough1.1.gif" title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" /><br>
 
-### Notes
-
-Describe any challenges encountered while building the app.
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
@@ -57,7 +54,7 @@ The following **stretch** stories are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='Walkthrough.gif' title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" width="250" height="250"/>
+<img src='Walkthrough.gif' title='Video Walkthrough' alt='Video Walkthrough' style="vertical-align:middle" />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
