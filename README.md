@@ -17,6 +17,7 @@
 - [X] Add a play icon overlay to popular movies to indicate that the movie can be played (1 point).
 - [X] Apply the data binding library to reduce view boilerplate. (1 point)
 - [X] Add a rounded corners for the images using the Glide transformations. (1 point)
+- [X] Added shared element transition
 
 ### App Walkthough GIF
 
